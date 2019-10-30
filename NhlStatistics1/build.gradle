@@ -1,6 +1,6 @@
 
 apply plugin: 'java'
-apply olugin: 'jacoco'
+apply plugin: 'jacoco'
 apply plugin: 'application'
 
 repositories {
