@@ -67,4 +67,10 @@ public class StatisticsTest {
     }
     assertEquals(2, control);
   }
+
+  @Test
+  public void topScorersListIsRightSize() {
+    List<Player> players = stats.topScorers(3);
+    assertEquals(3, players.size());
+  }
 }
