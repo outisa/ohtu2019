@@ -1,7 +1,11 @@
 
 package ohtu.verkkokauppa;
 
+//import org.springframework.stereotype.Component;
+
+//@Component
 public class Tuote {
+    
     private int id;
     private String nimi;
     private int hinta;
@@ -16,20 +20,20 @@ public class Tuote {
     public boolean equals(Object o) {
         Tuote t = (Tuote)o;
         
-        return id==t.id;
+        return this.id==t.id;
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public int getHinta() {
-        return hinta;
+        return this.hinta;
     }
 
     @Override
     public String toString() {
-        return nimi;
+        return this.nimi;
     }            
     
 }

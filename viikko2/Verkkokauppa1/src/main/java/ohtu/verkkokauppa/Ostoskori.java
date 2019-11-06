@@ -1,27 +1,29 @@
 package ohtu.verkkokauppa;
 
 import java.util.ArrayList;
+//import org.springframework.stereotype.Component;
 
+//@Component
 public class Ostoskori {
 
-    ArrayList<Tuote> tuotteet;
-
+    private ArrayList<Tuote> tuotteet;
+    
     public Ostoskori() {
-        tuotteet = new ArrayList<Tuote>();
+        this.tuotteet = new ArrayList<Tuote>();
     }
 
     public void lisaa(Tuote t) {
-        tuotteet.add(t);
+        this.tuotteet.add(t);
     }
 
     public void poista(Tuote t) {
-        tuotteet.remove(t);
+        this.tuotteet.remove(t);
     }
 
     public int hinta() {
         int hinta = 0;
 
-        for (Tuote tuote : tuotteet) {
+        for (Tuote tuote : this.tuotteet) {
             hinta += tuote.getHinta();
         }
 

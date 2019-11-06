@@ -1,31 +1,25 @@
 package ohtu.verkkokauppa;
 
 import java.util.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Varasto implements VarastoInterface {
-
-    private static Varasto instanssi;
-
-    public static Varasto getInstance() {
-        if (instanssi == null) {
-            instanssi = new Varasto();
-        }
-
-        return instanssi;
-    }
     
-    private Kirjanpito kirjanpito;
     private HashMap<Tuote, Integer> saldot;  
-    
-    private Varasto() {
-        kirjanpito = Kirjanpito.getInstance();
-        saldot = new HashMap<Tuote, Integer>();
+    private Kirjanpito kirjanpito;
+
+    @Autowired    
+    public Varasto(Kirjanpito kirjanpito) {
+        this.kirjanpito = kirjanpito;
+        this.saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
     }
             
     @Override
     public Tuote haeTuote(int id){
-        for (Tuote t : saldot.keySet()) {
+        for (Tuote t : this.saldot.keySet()) {
             if ( t.getId()==id) return t;
         }
         
@@ -34,26 +28,26 @@ public class Varasto implements VarastoInterface {
 
     @Override
     public int saldo(int id){
-        return saldot.get(haeTuote(id));
+        return this.saldot.get(haeTuote(id));
     }
     
     @Override
     public void otaVarastosta(Tuote t){        
-        saldot.put(t,  saldo(t.getId())-1 );
-        kirjanpito.lisaaTapahtuma("otettiin varastosta "+t);
+        this.saldot.put(t,  saldo(t.getId())-1 );
+        this.kirjanpito.lisaaTapahtuma("otettiin varastosta "+t);
     }
     
     @Override
     public void palautaVarastoon(Tuote t){
-        saldot.put(t,  saldo(t.getId())+1 );
-        kirjanpito.lisaaTapahtuma("palautettiin varastoon "+t);
+        this.saldot.put(t,  saldo(t.getId())+1 );
+        this.kirjanpito.lisaaTapahtuma("palautettiin varastoon "+t);
     }    
     
     private void alustaTuotteet() {
-        saldot.put(new Tuote(1, "Koff Portteri", 3), 100);
-        saldot.put(new Tuote(2, "Fink Bräu I", 1), 25);
-        saldot.put(new Tuote(3, "Sierra Nevada Pale Ale", 5), 30);
-        saldot.put(new Tuote(4, "Mikkeller not just another Wit", 7), 40);
-        saldot.put(new Tuote(5, "Weihenstephaner Hefeweisse", 4), 15);
+        this.saldot.put(new Tuote(1, "Koff Portteri", 3), 100);
+        this.saldot.put(new Tuote(2, "Fink Bräu I", 1), 25);
+        this.saldot.put(new Tuote(3, "Sierra Nevada Pale Ale", 5), 30);
+        this.saldot.put(new Tuote(4, "Mikkeller not just another Wit", 7), 40);
+        this.saldot.put(new Tuote(5, "Weihenstephaner Hefeweisse", 4), 15);
     }
 }
