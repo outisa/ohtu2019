@@ -2,3 +2,7 @@
 .gradle
 bin
 build
+/viikko3/nhlreader/.nb-gradle/
+/viikko3/HelloCucumber/.nb-gradle/
+/viikko3/LoginCucumber/.nb-gradle/
+/viikko3/WebLogin/.nb-gradle/
