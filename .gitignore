@@ -6,7 +6,7 @@ build
 /viikko3/HelloCucumber/.nb-gradle/
 /viikko3/LoginCucumber/.nb-gradle/
 /viikko3/WebLogin/.nb-gradle/
-/viikko3/Weblogin/salasanat.txt
+salasanat.txt
 
 /viikko_4/MockitoDemo/.nb-gradle/
 /viikko4/MaksukorttiMockito/.nb-gradle/
