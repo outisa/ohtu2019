@@ -28,6 +28,7 @@ public class Kauppa implements KauppaInterface {
     public void poistaKorista(int id) {
         Tuote t = varasto.haeTuote(id); 
         varasto.palautaVarastoon(t);
+        ostoskori.poista(t);
     }
 
     @Override
