@@ -5,3 +5,5 @@ Keep it simple!
 That's it!
 
 Refactor it, when refactoring needed!
+
+Ja homma etenee.
