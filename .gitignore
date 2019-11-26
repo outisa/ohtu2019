@@ -1,3 +1,8 @@
+viikko5/LaskinFX11/.classpath
+viikko5/LaskinFX11/.nb-gradle/profiles/private/aux-config
+viikko5/LaskinFX11/.project
+viikko5/LaskinFX11/.settings/org.eclipse.buildship.core.prefs
+
 /viikko2/Verkkokauppa1/.nb-gradle/
 .gradle
 bin
@@ -13,3 +18,5 @@ salasanat.txt
 /viikko4/IntJoukkoSovellus/.nb-gradle/
 /viikko4/Tennis/.nb-gradle/
 /viikko1/tehtavat14-16/NhlStatistics1/.nb-gradle/
+.properties
+.nb-gradle
