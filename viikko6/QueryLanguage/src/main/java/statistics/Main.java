@@ -17,7 +17,9 @@ public class Main {
                 .hasFewerThan(8, "goals").build(),
 
             query.playsIn("EDM")
-                .hasAtLeast(20, "points").build()
+                .hasAtLeast(20, "points").build(),
+            
+            query.playsIn("BOS").build()
         ).build();
  
         for (Player player : stats.matches(m)) {
